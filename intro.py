@@ -21,7 +21,5 @@ def main():
 	Final.forward(L1.op)
 	print(Final.op)
 
-# HELLO RAJU
-
 if __name__ == '__main__':
 	main()
