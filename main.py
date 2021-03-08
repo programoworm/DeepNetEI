@@ -6,7 +6,7 @@ import numpy as np
 
 class DeepNet:
 	def __init__(self, shape_x, shape_y, X_train, Y_train):
-		self.model = keras.Sequential([keras.layers.Flatten(input_shape=(shape_x,shape_y)), keras.layers.Dense(100, activation='relu'),keras.layers.Dense(10, activation='sigmoid')])
+		self.model = keras.Sequential([keras.layers.Flatten(input_shape=(shape_x,shape_y)), keras.layers.Dense(8, activation='relu'),keras.layers.Dense(1, activation='sigmoid')])
 		self.model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 		self.model.fit(X_train, Y_train, epochs=10)
 
@@ -23,12 +23,14 @@ def main():
 		txy=line.strip().split(",")
 		tx=[]
 		for i in range(8):
-			tx.append(txy[i])
+			tx.append(float(txy[i]))
 		X_train.append(tx)
-		Y_train.append(txy[8])
+		Y_train.append(float(txy[8]))
 		count+=1
 	#print(int(Y_train[8]))
 	print(X_train)
-	print(Y_train)	
+	print(Y_train)
+	dlmod=DeepNet(8, 1, X_train, Y_train)
+
 if __name__=='__main__':
 	main()
