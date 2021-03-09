@@ -11,7 +11,7 @@ class DeepNet:
 			keras.layers.Dense(12, activation='relu'),
 			keras.layers.Dense(1, activation='sigmoid')])
 		self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-		self.model.fit(X_train, Y_train, epochs=150, batch_size=10)
+		self.model.fit(X_train, Y_train, epochs=250, batch_size=10)
 	
 	def test(self,X_test,Y_test):
 		self.model.evaluate(X_test,Y_test)
