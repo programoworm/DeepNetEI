@@ -1,3 +1,5 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
@@ -11,7 +13,7 @@ class DeepNet:
 		self.model.fit(X_train, Y_train, epochs=10)
 
 def main():
-	print('DeepNet using TensorFlow')
+	print('DeepNet using TensorFlow ',tf.__version__)
 	#iname=input("Enter the name of the input file: ")
 	file=open("train.data",'r')
 	#Y_train=file.readline().split(",")
@@ -31,6 +33,5 @@ def main():
 	print(X_train)
 	print(Y_train)
 	dlmod=DeepNet(8, 1, X_train, Y_train)
-
 if __name__=='__main__':
 	main()
