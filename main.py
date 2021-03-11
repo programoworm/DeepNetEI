@@ -29,11 +29,12 @@ def main():
 	data=np.loadtxt("./Datasets/d_test.data",delimiter=",")
 	X_test=data[:,0:8]
 	Y_test=data[:,8]
-	print("\nTest Results\n============\n")
 	
 	#Model creation and training by constructor
 	dlmod=DeepNet(8, 1, np.array(X_train), np.array(Y_train),X_test,Y_test)
 		
+	print("\nTest Results\n============\n")
+	
 	#Testing data using test() method of the model
 	dlmod.test(np.array(X_test),np.array(Y_test))
 	
@@ -41,6 +42,7 @@ def main():
 	#the neuron produced value
 	y=np.round(dlmod.model.predict(X_test))
 	print(y[2])
+	#EndRange=(step*epoch+1) i.e. (250*5+1)
 	e=np.arange(1,1251,5)
 	plt.plot(e,dlmod.h.history['accuracy'],'g',label='Training Accuracy')
 	plt.plot(e,dlmod.h.history['val_accuracy'],'b',label='Testing Accuracy')
@@ -49,5 +51,6 @@ def main():
 	plt.ylabel('Accuracy')
 	plt.legend()
 	plt.show()
+
 if __name__=='__main__':
 	main()
