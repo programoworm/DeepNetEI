@@ -1,23 +1,9 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-import tensorflow as tf
-from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
-class DeepNet:
-	def __init__(self, shape_x, shape_y, X_train, Y_train, X_test, Y_test):
-		self.model = keras.Sequential([keras.layers.Flatten(input_shape=(shape_x,shape_y)), 
-			keras.layers.Dense(5, activation='relu'),
-			keras.layers.Dense(12, activation='relu'),
-			keras.layers.Dense(1, activation='sigmoid')])
-		self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-		self.h=self.model.fit(X_train, Y_train, epochs=250, batch_size=10, validation_data=(X_test,Y_test))
-	
-	def test(self,X_test,Y_test):
-		self.model.evaluate(X_test,Y_test)
+import DeepNet as dn
 
 def main():
-	print('DeepNet using TensorFlow ',tf.__version__)
+	#print('DeepNet using TensorFlow ',tf.__version__)
 	print('\nTraining the model\n=================\n')
 	
 	#Training data modelling
@@ -31,12 +17,12 @@ def main():
 	Y_test=data[:,8]
 	
 	#Model creation and training by constructor
-	dlmod=DeepNet(8, 1, np.array(X_train), np.array(Y_train),X_test,Y_test)
+	dlmod=dn.DeepNet(8, 1, [5,12])
 		
-	print("\nTest Results\n============\n")
+	#print("\nTest Results\n============\n")
 	
 	#Testing data using test() method of the model
-	dlmod.test(np.array(X_test),np.array(Y_test))
+	dlmod.train_test(X_train,Y_train,X_test,Y_test,'adam','binary_crossentropy',250,10)
 	
 	#Verification of a signle testdata by rounding off
 	#the neuron produced value
@@ -49,7 +35,7 @@ def main():
 	plt.title('Accuracy plotting')
 	plt.xlabel('Epoch')
 	plt.ylabel('Accuracy')
-	plt.legend()
+	plt.legend(['Test','Train'],loc='upper left')
 	plt.show()
 
 if __name__=='__main__':
