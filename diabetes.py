@@ -1,20 +1,21 @@
-# Heart Dataset 
+#Diabetes data
 import numpy as np
 import matplotlib.pyplot as plt
 import DeepNet as dn
-def heart():
-	# load the dataset
-	dataset=np.loadtxt('./Datasets/rand_heart.data', delimiter=',')
 
-	# split into input (X) and output (y) variables
-	X_train=dataset[:250,0:13]
-	Y_train=dataset[:250,13]
+def diabetes():
+	#Training data modelling
+	data=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
+	X_train=data[:559,0:8]
+	Y_train=data[:559,8]
 
-	X_test=dataset[251:,0:13]
-	Y_test=dataset[251:,13]
-
+	#Testing data modelling
+	X_test=data[560:,0:8]
+	Y_test=data[560:,8]
+	
 	#Model creation
-	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6])
+	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[5,12])
+
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
@@ -22,7 +23,7 @@ def heart():
 	y=np.round(dlmod.model.predict(X_test))
 	print(y[2])
 	#EndRange=(step*epoch+1) i.e. (250*5+1)
-	# summarize history for accuracy
+	
 	e=np.arange(1,251,1)
 	plt.plot(e,dlmod.h.history['accuracy'])
 	plt.plot(e,dlmod.h.history['val_accuracy'])
