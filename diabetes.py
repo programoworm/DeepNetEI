@@ -14,7 +14,7 @@ def diabetes():
 	Y_test=data[560:,8]
 	
 	#Model creation
-	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[5,12])
+	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[5,12],"Diabetes")
 
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)

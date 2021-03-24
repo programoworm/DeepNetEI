@@ -14,7 +14,7 @@ def heart():
 	Y_test=dataset[251:,13]
 
 	#Model creation
-	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6])
+	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6],"Heart")
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
