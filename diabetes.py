@@ -6,12 +6,12 @@ import DeepNet as dn
 def diabetes():
 	#Training data modelling
 	data=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
-	X_train=data[:559,0:8]
-	Y_train=data[:559,8]
+	X_train=data[:615,0:8]
+	Y_train=data[:615,8]
 
 	#Testing data modelling
-	X_test=data[560:,0:8]
-	Y_test=data[560:,8]
+	X_test=data[616:,0:8]
+	Y_test=data[616:,8]
 	
 	#Model creation
 	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[5,3],"Diabetes")
