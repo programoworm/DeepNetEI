@@ -9,10 +9,11 @@ def choose(ch):
 	}
 	chosen=switcher.get(ch, "Invalid Choice")
 	return chosen()
+
 def main():
-	ch=input('Type 1,2 or 3:\n1.Diabetes\n2.Heart\n3.Exit\n')
 	while True:
+		ch=input('\nType 1,2 or 3:\n1.Diabetes\n2.Heart\n3.Exit\nEnter your choice: ')
 		choose(int(ch))
-		ch=input('Type 1,2 or 3:\n1.Diabetes\n2.Heart\n3.Exit\n')
+
 if __name__=='__main__':
 	main()
