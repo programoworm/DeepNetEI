@@ -9,7 +9,7 @@ The whole project can be classified in the following two parts:
 ## **Simulation of the Edge**  
 ~Yet to be decided~
 
-### Dependencies  
+## Dependencies  
 1. python3  
 2. tensorflow  
 3. numpy  
