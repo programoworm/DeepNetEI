@@ -32,6 +32,6 @@ def evaluate_model(name,model,features,labels):
   recall = round(recall_score(labels,pred),3)
   print("{} -- accuracy: {} / precision: {} / recall: {} / Latency: {}ms".format(name,accuracy,precision,recall,round((end-start),5)))
 
-for model in names:
-  model = joblib.load('./{}_model.pkl'.format(model))
-  evaluate_model('RF',model,tst_features,tst_labels)
+for name in names:
+  model = joblib.load('./{}_model.pkl'.format(name))
+  evaluate_model(name,model,tst_features,tst_labels)
