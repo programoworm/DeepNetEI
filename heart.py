@@ -21,6 +21,7 @@ def heart():
 	#Verification of a signle testdata by rounding off the neuron produced value
 	y=np.round(dlmod.model.predict(X_test))
 	print(y[2])
+	dlmod.model.save('Models/DeepNetEI_heart')
 	#EndRange=(step*epoch+1) i.e. (250*5+1)
 	# summarize history for accuracy
 	e=np.arange(1,251,1)

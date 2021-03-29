@@ -23,7 +23,7 @@ def diabetes():
 	y=np.round(dlmod.model.predict(X_test))
 	print(y[2])
 	#EndRange=(step*epoch+1) i.e. (250*5+1)
-	
+	dlmod.model.save('Models/DeepNetEI_diab')
 	e=np.arange(1,251,1)
 	plt.plot(e,dlmod.h.history['accuracy'])
 	plt.plot(e,dlmod.h.history['val_accuracy'])
