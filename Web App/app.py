@@ -52,9 +52,11 @@ def result():
             result = ValuePredictor(to_predict_list,13)
     if(np.round(result)==1):
         prediction='Sorry ! Suffering'
+        xyz= result
     else:
-        prediction='Congrats ! you are Healthy' 
-    return(render_template("result.html", prediction=prediction))
+        prediction='Congrats ! you are Healthy'
+        xyz= result 
+    return(render_template("result.html", prediction=prediction, xyz=xyz))
 
 if __name__ == "__main__":
     app.run(debug=True)
