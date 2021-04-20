@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import DeepNet as dn
-
+from time import time
 def diabetes():
 	#Training data modelling
 	data=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
@@ -19,8 +19,11 @@ def diabetes():
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
-	#Verification of a signle testdata by rounding off the neuron produced value
+	#Verification of a single testdata by rounding off the neuron produced value
+	t=time()
 	y=np.round(dlmod.model.predict(X_test))
+	t=time()-t
+	print(t)
 	print(y[2])
 	#EndRange=(step*epoch+1) i.e. (250*5+1)
 	dlmod.model.save('Models/DeepNetEI_diab')

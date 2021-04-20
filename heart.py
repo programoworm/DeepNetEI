@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import DeepNet as dn
+from time import time
 def heart():
 	# load the dataset
 	dataset=np.loadtxt('./Datasets/rand_heart.data', delimiter=',')
@@ -19,7 +20,10 @@ def heart():
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
 	#Verification of a signle testdata by rounding off the neuron produced value
+	t=time()
 	y=np.round(dlmod.model.predict(X_test))
+	t=time()-t
+	print(t)
 	print(y[2])
 	dlmod.model.save('Models/DeepNetEI_heart')
 	#EndRange=(step*epoch+1) i.e. (250*5+1)

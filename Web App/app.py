@@ -1,4 +1,6 @@
 #Important Modules
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 from flask import Flask,render_template, url_for ,flash , redirect
 import joblib
 from flask import request
