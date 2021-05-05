@@ -8,16 +8,16 @@ Original file is located at
 """
 
 import numpy as np
-#from PIL import Image
-import cv2
+from PIL import Image
+#import cv2
 
-dataset1 = np.array([np.array(cv2.imread("https://github.com/KBasak5/Project_Dataset/blob/master/COVID-19_Radiography_Dataset/COVID/COVID-{}.png".format(fname))) for fname in range(1,1001)])
+#dataset1 = np.array([np.array(cv2.imread("https://github.com/KBasak5/Project_Dataset/blob/master/COVID-19_Radiography_Dataset/COVID/COVID-{}.png".format(fname))) for fname in range(1,1001)])
 
-#dataset1 = np.array([np.array(Image.open("/content/COVID_data/COVID-{}.png".format(fname))) for fname in range(1,1001)])
+dataset1 = np.array([np.array(Image.open("/content/COVID_data/COVID-{}.png".format(fname))) for fname in range(1,1001)])
 
-dataset2 = np.array([np.array(cv2.imread("https://github.com/KBasak5/Project_Dataset/blob/master/COVID-19_Radiography_Dataset/Normal/Normal-{}.png".format(fname))) for fname in range(1,1001)])
+#dataset2 = np.array([np.array(cv2.imread("https://github.com/KBasak5/Project_Dataset/blob/master/COVID-19_Radiography_Dataset/Normal/Normal-{}.png".format(fname))) for fname in range(1,1001)])
 
-#dataset2 = np.array([np.array(Image.open("/content/Normal_data/Normal-{}.png".format(fname))) for fname in range(1,1001)])
+dataset2 = np.array([np.array(Image.open("/content/Normal_data/Normal-{}.png".format(fname))) for fname in range(1,1001)])
 #dataset1.shape
 
 #dataset2.shape
