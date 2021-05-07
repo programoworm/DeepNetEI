@@ -15,5 +15,8 @@ The whole project can be classified in the following two parts:
 3. numpy  
 4. matplotlib
 
-## Radiography images dataset link  
+## COVID Dataset  
+https://github.com/nshomron/covidpred
+
+## Radiography images dataset  
 https://www.kaggle.com/tawsifurrahman/covid19-radiography-database
