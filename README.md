@@ -14,3 +14,6 @@ The whole project can be classified in the following two parts:
 2. tensorflow  
 3. numpy  
 4. matplotlib
+
+## Radiography images dataset link  
+https://www.kaggle.com/tawsifurrahman/covid19-radiography-database
