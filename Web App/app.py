@@ -1,6 +1,6 @@
 #Important Modules
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from flask import Flask,render_template, url_for ,flash , redirect
 import joblib
 from flask import request
@@ -32,13 +32,22 @@ def diabetes():
 def heart():
     return render_template("heart.html")
 
+@app.route("/covid")
+def covid():
+    return render_template("covid.html")
+
 def ValuePredictor(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1,size)
     if(size==8):#Diabetes
-        loaded_model = load_model('model.h5')
+        loaded_model = load_model('diabetes.h5')
         result = loaded_model.predict(to_predict)
     elif(size==13):#Heart
-        loaded_model = load_model("model1.h5")
+        loaded_model = load_model("heart.h5")
+        result =loaded_model.predict(to_predict)
+    elif(size==9):#Covid
+        loaded_model = load_model("covid.h5")
+        print(to_predict_list[:-1])
+        to_predict=np.array(to_predict_list[:-1]).reshape(1,size)
         result =loaded_model.predict(to_predict)
     return result[0]
 
@@ -50,13 +59,15 @@ def result():
         to_predict_list = list(map(float, to_predict_list))
         if(len(to_predict_list)==8):#Daiabtes
             result = ValuePredictor(to_predict_list,8)
+        elif(len(to_predict_list)==9):
+            result = ValuePredictor(to_predict_list,9)
         elif(len(to_predict_list)==13):
             result = ValuePredictor(to_predict_list,13)
     if(np.round(result)==1):
-        prediction='Sorry ! Suffering'
+        prediction='Sorry! You are suffering'
         xyz= result
     else:
-        prediction='Congrats ! you are Healthy'
+        prediction='Congrats! you are Healthy'
         xyz= result 
     return(render_template("result.html", prediction=prediction, xyz=xyz))
 

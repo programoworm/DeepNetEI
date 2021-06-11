@@ -15,7 +15,7 @@ def heart():
 	Y_test=dataset[243:,13]
 
 	#Model creation
-	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6],"Heart")
+	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6],"Heart",'sigmoid')
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
@@ -27,20 +27,6 @@ def heart():
 	print(y[2])
 	dlmod.model.save('Models/DeepNetEI_heart')
 	#EndRange=(step*epoch+1) i.e. (250*5+1)
-	# summarize history for accuracy
+	# summarize history for accuracy and loss
 	e=np.arange(1,251,1)
-	plt.plot(e,dlmod.h.history['accuracy'])
-	plt.plot(e,dlmod.h.history['val_accuracy'])
-	plt.title('model accuracy')
-	plt.ylabel('accuracy')
-	plt.xlabel('epoch')
-	plt.legend(['train', 'test'], loc='upper left')
-	plt.show()
-	# summarize history for loss
-	plt.plot(e,dlmod.h.history['loss'])
-	plt.plot(e,dlmod.h.history['val_loss'])
-	plt.title('model loss')
-	plt.ylabel('loss')
-	plt.xlabel('epoch')
-	plt.legend(['train', 'test'], loc='upper left')
-	plt.show()
+	dlmod.plot(e)

@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 import DeepNet as dn
 
 #Training data modelling
-data=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
+data=np.loadtxt("Datasets/diabetes.data",delimiter=",",comments='#')
 X = data[:,0:8]
 y = data[:,8]
 
@@ -44,5 +44,5 @@ dlmod.model.fit(X, y, epochs=250, batch_size=10)
 # evaluate the keras model
 _, accuracy = dlmod.model.evaluate(X, y)
 # save the model
-dlmod.model.save("model.h5")
+dlmod.model.save("diabetes.h5")
 print("Saved model to disk")
