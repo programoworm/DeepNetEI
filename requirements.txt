@@ -1,5 +1,0 @@
-flask
-tensorflow
-numpy
-joblib
-gunicorn
