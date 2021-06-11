@@ -14,7 +14,7 @@ def corona():
   dlmod=dn.DeepNet(X_train.shape[1], 1,'adam', 'binary_crossentropy',[10,6],"Corona",'sigmoid')
   #Training and Testing of the data
   
-  dlmod.train_test(X_train,Y_train,X_test,Y_test,1,32)
+  dlmod.train_test(X_train,Y_train,X_test,Y_test,50,32)
 	#Verification of a single testdata by rounding off the neuron produced value
   s=time()
   y=np.round(dlmod.model.predict(X_test))
