@@ -48,35 +48,59 @@
     <h3>Enter the Following parameters </h3>
   <form action="/result" method="POST">
     <label for="cough">Cough(1 for Yes, 0 for No) ->  </label>
-    <input type="text" id="cough" name="cough">
+    <select id="cough" name="cough">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <label for="fever">Fever ->  </label>
-    <input type="text" id="fever" name="fever">
+    <select id="fever" name="fever">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <label for="sore_throat">Sore Throat ->  </label>
-    <input type="text" id="sore_throat" name="sore_throat">
+    <select id="sore_throat" name="sore_throat">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <label for="short_breath">Shortness of Breath ->  </label>
-    <input type="text" id="shortbreath" name="shortbreath">
+    <select id="short_breath" name="short_breath">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
-    <label for="age60">Headache?(1/0) ->  </label>
-    <input type="text" id="age" name="age60">
+    <label for="headache">Headache?(1/0) ->  </label>
+    <select id="headache" name="headache">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <label for="age60">Age 60+ or not?(1/0) ->  </label>
-    <input type="text" id="age" name="age60">
+    <select id="age60" name="age60">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <label for="gender">Gender (Male=1; Female=0)</label>
-    <input type="text" id="sex" name="sex">
+    <select id="gender" name="gender">
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+    </select>
     <br>
 
     <label for="contact">Contact with confirmed cases</label>
-    <input type="text" id="contact" name="contact">
+    <select id="contact" name="contact">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
     <input type="hidden" id="extra" name="extra" value="0">
