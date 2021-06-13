@@ -21,8 +21,13 @@ etc.
 Deployed in Heroku server.  
 Access: https://dnedge.herokuapp.com  
 
-## COVID Dataset  
-https://github.com/nshomron/covidpred
 
-## Radiography images dataset  
-https://www.kaggle.com/tawsifurrahman/covid19-radiography-database
+## Datasets  
+### Diabetes  
+https://www.kaggle.com/uciml/pima-indians-diabetes-database  
+### Heart  
+https://www.kaggle.com/ronitf/heart-disease-uci  
+### Covid  
+https://github.com/nshomron/covidpred  
+### Radiography images dataset  
+https://www.kaggle.com/tawsifurrahman/covid19-radiography-database  
