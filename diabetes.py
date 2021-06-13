@@ -5,16 +5,16 @@ import DeepNet as dn
 from time import time
 def diabetes():
 	#Training data modelling
-	data=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
-	X_train=data[:615,0:8]
-	Y_train=data[:615,8]
+	dataset=np.loadtxt("./Datasets/diabetes.data",delimiter=",",comments='#')
+	X=dataset[1:,:-1]
+	Y=dataset[1:,-1]
 
-	#Testing data modelling
-	X_test=data[616:,0:8]
-	Y_test=data[616:,8]
+	#split into input (X) and output (y) variables
+	X_train,X_test=np.split(X,[int(len(X)*0.8)])
+	Y_train,Y_test=np.split(Y,[int(len(Y)*0.8)])
 	
 	#Model creation
-	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[12,8],"Diabetes")
+	dlmod=dn.DeepNet(8, 1,'adam','binary_crossentropy',[12,8],"Diabetes",'sigmoid')
 
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)

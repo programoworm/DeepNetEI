@@ -8,11 +8,11 @@ def heart():
 	dataset=np.loadtxt('./Datasets/rand_heart.data', delimiter=',')
 
 	# split into input (X) and output (y) variables
-	X_train=dataset[:242,0:13]
-	Y_train=dataset[:242,13]
-
-	X_test=dataset[243:,0:13]
-	Y_test=dataset[243:,13]
+	X = dataset[1:,:-1]
+	Y = dataset[1:,-1]
+	# split into input (X) and output (y) variables
+	X_train,X_test=np.split(X,[int(len(X)*0.8)])
+	Y_train,Y_test=np.split(Y,[int(len(Y)*0.8)])
 
 	#Model creation
 	dlmod=dn.DeepNet(13, 1,'adam','binary_crossentropy',[10,6],"Heart",'sigmoid')
