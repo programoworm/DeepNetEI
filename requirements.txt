@@ -1,0 +1,5 @@
+flask
+tensorflow-cpu
+numpy
+joblib
+gunicorn

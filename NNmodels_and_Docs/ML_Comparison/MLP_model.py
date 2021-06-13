@@ -26,7 +26,7 @@ import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 
-dataset = np.loadtxt('./rand_heart.data', delimiter=',')
+dataset = np.loadtxt('./Datasets/rand_heart.data', delimiter=',')
 train = dataset[:,:-1]
 label = dataset[:,-1]
 tr_features,tst_features = np.split(train,[int(len(train)*0.8)])
@@ -59,6 +59,7 @@ print_results(cv)
 
 cv.best_estimator_
 
+joblib.dump(cv.best_estimator_,'./MLP_Model.pkl')
 """### Write out pickled model"""
 
 joblib.dump(cv.best_estimator_,'./MLP_Model.pkl')
