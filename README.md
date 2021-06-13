@@ -3,17 +3,23 @@
 The whole project can be classified in the following two parts:  
 
 ## **Deep Learning part**  
-1. intro.py: This Neural Network is built from scratch.
-2. main.py: This Neural Network is built using Tensorflow.
+1. NNmodels_and_Docs/main.py: Neural Network model training, built using Tensorflow.  
+2. app.py: Web app for the models.  
 
 ## **Simulation of the Edge**  
-~Yet to be decided~
+Done using PureEdgeSim simulator
 
 ## Dependencies  
 1. python3  
 2. tensorflow  
 3. numpy  
 4. matplotlib
+5. flask
+etc.  
+
+## Web-app  
+Deployed in Heroku server.  
+Access: https://dnedge.herokuapp.com  
 
 ## COVID Dataset  
 https://github.com/nshomron/covidpred
