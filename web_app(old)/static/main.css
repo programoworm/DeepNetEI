@@ -9,11 +9,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #009688;
+  background-color: #5f788a;
 }
-.site-header {
-  font size: 100px;
-}
+
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
 }

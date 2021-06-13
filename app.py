@@ -46,7 +46,6 @@ def ValuePredictor(to_predict_list, size):
         result =loaded_model.predict(to_predict)
     elif(size==9):#Covid
         loaded_model = load_model("covid.h5")
-        print("Predicted values",to_predict_list[:-1])
         to_predict=np.array(to_predict_list[:-1]).reshape(1,size-1)
         result =loaded_model.predict(to_predict)
     return result[0]
@@ -65,7 +64,7 @@ def result():
             result = ValuePredictor(to_predict_list,13)
     #    return render_template("result.html", prediction=str(to_predict_list))
     if(np.round(result)==1):
-        prediction='Sorry! You are suffering'
+        prediction='Sorry! You are maybe suffering'
         xyz= result
     else:
         prediction='Congrats! you are Healthy'

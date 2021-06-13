@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-	<title>Heart_pred</title>
+	<title>DeepNet(Heart)</title>
     
 </head>
 	<style>
@@ -26,7 +26,7 @@
     <header class="site-header">
   <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
     <div class="container">
-      <a class="navbar-brand mr-4" href="/">Edge Web Application</a>
+      <a class="navbar-brand mr-4" href="/">DeepNet</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,51 +51,77 @@
     <input type="text" id="age" name="age">
     <br>
 
-    <label for="sex">Sex(1 for Male,0 for Female) ->  </label>
-    <input type="text" id="sex" name="sex">
+    <label for="sex">Sex->  </label>
+    <select id="gender" name="gender">
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+    </select>
     <br>
 
-    <label for="chest pain type">Chest pain type (range 0 to 4) ->  </label>
-    <input type="text" id="chest pain type" name="chest pain type">
-    <br>
+    <label for="chest pain type">Chest pain type (range 0 to 3) ->  </label>
+    <select id="pain" name="pain">
+      <option value="0">Low</option>
+      <option value="1">Medium</option>
+      <option value="2">High</option>
+      <option value="3">Very High</option>
+    </select><br>
 
-    <label for="trestbps">Trestbps (resting blood pressure in mm Hg) ->  </label>
+    <label for="trestbps">Resting blood pressure in mmHg ->  </label>
     <input type="text" id="trestbps" name="trestbps">
     <br>
 
-     <label for="serum cholestoral in mg/dl">Cholestoral (serum cholestoral in mg/dl) ->  </label>
+     <label for="serum cholestoral in mg/dl">Serum cholestoral in mg/dl ->  </label>
     <input type="text" id="serum cholestoral in mg/dl" name="serum cholestoral in mg/dl">
     <br>
 
-    <label for="fbs">Fbs (fasting blood sugar > 120 mg/dl for 1 be true, 0 be false) ->  </label>
-    <input type="text" id="fbs" name="fbs">
+    <label for="fbs">Fasting blood sugar greater than 120mg/dl ->  </label>
+    <select id="fbs" name="fbs">
+      <option value="1">True</option>
+      <option value="0">False</option>
+    </select>
     <br>
 
-    <label for="restecg">Restecg (resting electrocardiographic results for values 0,1,2) ->  </label>
-    <input type="text" id="restecg" name="restecg">
+    <label for="restecg">Resting electrocardiographic results(0, 1 or 2) ->  </label>
+    <select id="restecg" name="restecg">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
     <br>
 
-    <label for="thalach">Thalach (maximum heart rate achieved) ->  </label>
+    <label for="thalach">Maximum heart rate achieved ->  </label>
     <input type="text" id="thalach" name="thalach">
     <br>
 
-    <label for="exang">Exang (exercise induced angina for 1 is yes,0 is no ) ->  </label>
-    <input type="text" id="exang" name="exang">
+    <label for="exang">Exercise induced angina(Yes/No) ->  </label>
+    <select id="exang" name="exang">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
     <br>
 
-    <label for="oldpeak">Oldpeak (ST depression induced by exercise relative to rest) ->  </label>
+    <label for="oldpeak">ST depression induced by exercise relative to rest ->  </label>
     <input type="text" id="oldpeak" name="oldpeak">
     <br>
 
-    <label for="slope">Slope (the slope of the peak exercise ST segment) ->  </label>
-    <input type="text" id="slope" name="slope">
+    <label for="slope">The slope of the peak exercise ST segment ->  </label>
+    <select id="slope" name="slope">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
     <br>
 
-    <label for="ca">Ca (number of major vessels (0-3) colored by flourosopy) ->  </label>
-    <input type="text" id="ca" name="ca">
+    <label for="ca">Number of major vessels(0-3) colored by flourosopy ->  </label>
+    <select id="ca" name="ca">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
     <br>
 
-    <label for="thal">Thal (values at rest of heart rate where 3 is normal; 6 is fixed defect; 7 is reversable defect) ->  </label>
+    <label for="thal">Values at rest of heart rate(3 is normal; 6 is fixed defect; 7 is reversable defect) ->  </label>
     <input type="text" id="thal" name="thal">
     <br>
     <br>

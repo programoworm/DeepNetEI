@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-	<title>covid_pred</title>
+	<title>DeepNet(Covid)</title>
     
 </head>
 	<style>
@@ -26,7 +26,7 @@
     <header class="site-header">
   <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
     <div class="container">
-      <a class="navbar-brand mr-4" href="/">Edge Web Application</a>
+      <a class="navbar-brand mr-4" href="/">DeepNet</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,64 +43,61 @@
   </nav>
 </header>
 <div class="container",class="form-group">
-        <h2>Details COVID </h2>
+        <h2>Details Covid </h2>
     <h2>Welcome</h2>
     <h3>Enter the Following parameters </h3>
   <form action="/result" method="POST">
-    <label for="cough">Cough(1 for Yes, 0 for No) ->  </label>
+    <label for="cough">Cough? ->  </label>
     <select id="cough" name="cough">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="fever">Fever ->  </label>
+    <label for="fever">Fever? ->  </label>
     <select id="fever" name="fever">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="sore_throat">Sore Throat ->  </label>
+    <label for="sore_throat">Sore Throat? ->  </label>
     <select id="sore_throat" name="sore_throat">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="short_breath">Shortness of Breath ->  </label>
+    <label for="short_breath">Shortness of Breath? ->  </label>
     <select id="short_breath" name="short_breath">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="headache">Headache?(1/0) ->  </label>
+    <label for="headache">Headache? ->  </label>
     <select id="headache" name="headache">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="age60">Age 60+ or not?(1/0) ->  </label>
+    <label for="age60">Age 60+ or not? ->  </label>
     <select id="age60" name="age60">
       <option value="1">Yes</option>
       <option value="0">No</option>
     </select>
     <br>
 
-    <label for="gender">Gender (Male=1; Female=0)</label>
+    <label for="gender">Gender -> </label>
     <select id="gender" name="gender">
       <option value="1">Male</option>
       <option value="0">Female</option>
     </select>
     <br>
 
-    <label for="contact">Contact with confirmed cases</label>
-    <select id="contact" name="contact">
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
+    <label for="contact">Contact with confirmed cases(numbers) -> </label>
+    <input type="text" id="contact" name="contact">
     <br>
 
     <input type="hidden" id="extra" name="extra" value="0">
