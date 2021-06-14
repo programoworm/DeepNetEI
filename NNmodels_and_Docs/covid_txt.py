@@ -31,6 +31,3 @@ def corona():
   #EndRange=(step*epoch+1) i.e. (250*5+1)
   e=np.arange(1,11,1)
   dlmod.model.save("covid.h5")
-  
-if __name__ == '__main__':
-  corona()

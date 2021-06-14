@@ -19,7 +19,7 @@ def heart():
 	#Training and Testing of the data
 	dlmod.train_test(X_train,Y_train,X_test,Y_test,250,10)
 	
-	#Verification of a signle testdata by rounding off the neuron produced value
+	#Verification of a single testdata by rounding off the neuron produced value
 	t=time()
 	y=np.round(dlmod.model.predict(X_test))
 	t=time()-t
